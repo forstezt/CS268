@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+    <script src="jquery.js"></script>
+	<!-- moved the script into the head element and used the jQuery ready
+	     function to avoid running it until the divTest1 div is loaded -->
+	<script>
+		function DocumentReady()
+		{
+			$("#divTest1").text("Hello, world!");   
+		}
+		$(document).ready(DocumentReady);
+	</script>	
+</head>
+<body>
+<div id="divTest1"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+    <title>Move Window</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function displayWindow() {
+    var wParams = "height=160,width=550,menubar=no,toolbar=no,titlebar=no," +
+                  "resizable=no,location=no,status=no,directories=no";
+
+    var adWindow = window.open("ad.htm","",wParams);
+    var i = 0;
+    do {
+        adWindow.moveTo(i, i);
+        i = i + 20;
+        pause(30);
+    } while (i < 600);
+}
+function pause(interval) {
+        var startTime = new Date();
+        var endTime = new Date();
+        while(endTime - startTime < interval) {
+            endTime = new Date();
+        }
+}
+</script>
+<input type="button" value="Display Window" onclick="displayWindow()" />
+</body>
+</html>

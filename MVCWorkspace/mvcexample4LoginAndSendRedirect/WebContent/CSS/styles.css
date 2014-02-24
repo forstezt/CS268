@@ -1,0 +1,127 @@
+@import url("all.css");
+#bodyCenter {
+	width       :700px;
+	height      :400px;
+	position    :relative;
+	margin-left :auto;
+	margin-right:auto;	
+	text-align  :left;
+	border      :inset 1px;
+	border-color:#333300;	
+}
+#navigation {
+   	position   : absolute;
+	width      : 700px;
+	height     : 30px;
+    top        : 0px;
+	left       : 0px;
+	text-align : center;
+	background-color:#CCCCCC;
+}
+#maincontent {
+   	position        : absolute;
+	width           : 690px;
+	height          : 360px;
+    top             : 30px;
+	left            : 0px;
+	background-color: #EEEEE0;
+	text-align      : center;
+	padding-top     : 5px;
+	padding-bottom  : 5px;
+	padding-left    : 5px;
+	padding-right   : 5px;
+	overflow        : auto;
+}
+#navTable {
+	width           : 100%;
+	background-color: silver;
+	text-align      : left;
+	position        : relative;
+	background-color: #CAE1FF;
+	border-collapse : collapse;
+	margin-left     : auto;
+	margin-right    : auto;
+}
+#navTable th {
+	text-align      : left;
+	background-color: #DBDCDA;	
+}
+#navTable td {
+	padding-left   : 5px;
+	padding-right  : 5px;
+	padding-top    : 5px;
+	padding-bottom : 5px;
+}
+#mainTable {
+	width           : 90%;
+	background-color: silver;
+	text-align      : left;
+	position        : relative;
+	background-color: #CAE1FF;
+	border-collapse : collapse;
+	margin-left     : auto;
+	margin-right    : auto;
+}
+#mainTable th {
+	text-align      : left;
+	background-color: #DBDCDA;
+	border          : inset 1px ;
+	border-color    : #333300;		
+}
+#mainTable td {
+	border         : inset 1px;
+	border-color   : #0000FF;
+	padding-left   : 5px;
+	padding-right  : 5px;
+	padding-top    : 5px;
+	padding-bottom : 5px;
+}
+.msgTable {
+	width           : 90%;
+	background-color: silver;
+	text-align      : left;
+	position        : relative;
+	background-color: #CAE1FF;
+	border-collapse : collapse;
+	margin-left     : auto;
+	margin-right    : auto;
+}
+.msgTable th {
+	text-align      : left;
+	background-color: #DBDCDA;
+	border          : inset 1px ;
+	border-color    : #333300;		
+}
+.msgTable td {
+	border         : inset 1px;
+	border-color   : #0000FF;
+	padding-left   : 5px;
+	padding-right  : 5px;
+	padding-top    : 5px;
+	padding-bottom : 5px;
+}
+.dataTable {
+	width          : 90%;
+	border-width   : 6px;
+	border-style   : inset;
+	border-color   : green;
+	border-collapse: collapse;
+	margin-left     : auto;
+	margin-right    : auto;
+}
+.dataTable td {
+	border         : inset 1px;
+	padding-left   : 5px;
+	padding-right  : 5px;
+	padding-top    : 5px;
+	padding-bottom : 5px;
+}
+.dataTable th {
+	background-color: blue;
+	border          : inset 1px ;
+	border-color    : white;	
+	color           : white;
+}
+.leftAlign {
+	text-align : left;	
+}

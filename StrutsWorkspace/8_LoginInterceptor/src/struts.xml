@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+   <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+   <constant name="struts.devMode" value="false" />
+    
+   <package name="strutsPkg" namespace="/" extends="struts-default">
+   		<interceptors>
+			<interceptor name="validateLogin" class="strutsPkg.LoginInterceptor" />			
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="defaultStack" />  
+				<!-- Add any additional interceptors below here if you always want them to run -->
+				<!-- the order the interceptors are listed matters! -->
+				<!-- Omit the preceding defaultStack at your peril - read below... -->
+				<interceptor-ref name="validateLogin" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginStack" />
+
+		<action name="login" class="strutsPkg.ClearLogin" method="clearLogin">
+			<result>Login.jsp</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>
+ 		
+		<action name="validatelogin" class="strutsPkg.Login" method="validateLogin">
+			<result name="success" type="redirect">display</result>
+			<result name="login" type="dispatcher">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>
+
+		<action name="display" class="strutsPkg.Product" method="retrieveProductInformation">
+			<result name="success">DisplayProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action> 
+		
+		<action name="insertInput" class="strutsPkg.ClearInsert_msg" method="clearInsert_msg">
+			<result>InsertProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+ 		</action>
+
+		<action name="insertInput2">
+			<result>InsertProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+ 		</action>
+
+		<action name="insert" class="strutsPkg.Product" method="runInsert">
+			<result type="redirect">insertInput2</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>	
+
+		<action name="deleteInput" class="strutsPkg.Product" method="clearDelete_msg">
+			<result type="redirect">deleteInput2</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>
+				
+		<action name="deleteInput2" class="strutsPkg.Product" method="retrieveProductInformation">
+			<result>DeleteProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>
+		
+		<action name="delete" class="strutsPkg.Product" method="runDelete">
+			<result type="redirect">deleteInput2</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>	
+		
+   </package>
+</struts>    
+
+
+ <!-- defaultStack: A complete stack with all the common interceptors in place.
+      Generally, this stack should be the one you use, though it
+      may do more than you need. Also, the ordering can be
+      switched around (ex: if you wish to have your servlet-related
+      objects applied before prepare() is called, you'd need to move
+      servlet-config interceptor up.
+
+      This stack also excludes from the normal validation and workflow
+      the method names input, back, and cancel. These typically are
+      associated with requests that should not be validated.
+     
+ <interceptor-stack name="defaultStack">
+     <interceptor-ref name="exception"/>
+     <interceptor-ref name="alias"/>
+     <interceptor-ref name="servlet-config"/>
+     <interceptor-ref name="prepare"/>
+     <interceptor-ref name="i18n"/>
+     <interceptor-ref name="chain"/>
+     <interceptor-ref name="debugging"/>
+     <interceptor-ref name="model-driven"/>
+     <interceptor-ref name="fileUpload"/>
+     <interceptor-ref name="static-params"/>
+     <interceptor-ref name="params"/>
+     <interceptor-ref name="conversionError"/>
+     <interceptor-ref name="validation">
+         <param name="excludeMethods">input,back,cancel,browse</param>
+     </interceptor-ref>
+     <interceptor-ref name="workflow">
+         <param name="excludeMethods">input,back,cancel,browse</param>
+     </interceptor-ref>
+ </interceptor-stack> -->
+	

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CSharpWeb1", ".", "{7DF3FEEB-8332-44D0-88CC-812273566FC4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/temp"
+		Debug.AspNetCompiler.PhysicalPath = "..\CSharpWeb1\"
+		Debug.AspNetCompiler.TargetPath = "..\..\..\..\..\..\temp\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/temp"
+		Release.AspNetCompiler.PhysicalPath = "..\CSharpWeb1\"
+		Release.AspNetCompiler.TargetPath = "..\..\..\..\..\..\temp\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1640"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DF3FEEB-8332-44D0-88CC-812273566FC4}.Debug|.NET.ActiveCfg = Debug|.NET
+		{7DF3FEEB-8332-44D0-88CC-812273566FC4}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

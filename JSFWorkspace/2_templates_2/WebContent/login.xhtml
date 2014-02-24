@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+<ui:composition template="/Templates/logintemplate.xhtml">
+<ui:define name="links">
+	<link href="CSS/classStyles.css" rel="stylesheet" />
+</ui:define>
+<ui:define name="content">
+	<h:form>
+	<table class="datatable" style="width:300px;">
+	    <tr><td align="right">UserID:&#160;</td><td><h:inputText name="f_userid" value="#{login.f_userid}" /></td></tr>
+	    <tr><td align="right">PIN:&#160;</td><td><h:inputSecret name="f_pin" value="#{login.f_pin}" /></td></tr>
+	    <tr><td>&#160;</td><td align="left"><h:commandButton value="Login" action="#{login.validateLogin}" /></td></tr>
+	    <tr><td colspan="2" style="text-align:center;"><span class="invalidlogin">${login.msg}</span><span class="msg">${course.msg}</span></td></tr>
+	    <tr><td colspan="2" align="left">Valid Logins (for testing purposes):</td></tr>
+	    <tr>
+	        <td><b>UserID</b></td>
+	        <td><b>PIN</b></td>
+	    </tr>
+	    <tr>
+	        <td>coxk</td>
+	        <td>1181</td>
+	    </tr>
+	    <tr>
+	        <td>blanj</td>
+	        <td>1075</td>
+	    </tr>
+	    <tr>
+	        <td>willj</td>
+	        <td>8531</td>
+	    </tr>
+	    <tr>
+	        <td>shenl</td>
+	        <td>1690</td>
+	    </tr>
+	    <tr>
+	        <td>browp</td>
+	        <td>9899</td>
+	    </tr>
+	    <tr>
+	        <td>whitj</td>
+	        <td>3214</td>
+	    </tr>	
+	</table>
+	</h:form>
+</ui:define>
+</ui:composition>
+</body>
+</html>

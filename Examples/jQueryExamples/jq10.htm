@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<script src="jquery.js"></script>
+	<script>
+		$("#divBox1").click(function() {
+			$("#divBox1").text("Clicked Box1!");
+		}); 
+		function example() {
+			$("#divBox2").text("Clicked Box2!");
+		}
+		$("#divBox2").click(example);     
+	</script>	
+</head>
+<body>
+<div id="divBox1" style="width:120px;height:50px;background-color:#89BC38;">
+  <b>Box1</b>
+</div>
+<div id="divBox2" style="width:120px;height:50px;background-color:#87CEFA;">
+  <b>Box2</b>
+</div>
+</body></html>

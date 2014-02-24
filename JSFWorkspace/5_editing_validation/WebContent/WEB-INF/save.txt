@@ -1,0 +1,6 @@
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+        </locale-config>
+        <message-bundle>jsfPkg.MyMessages</message-bundle><!-- replaces default validation messages -->
+    </application>

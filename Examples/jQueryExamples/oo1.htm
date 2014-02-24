@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+    <script src="jquery.js"></script>	
+</head>
+<body>
+<script>
+	function A() {
+		this.inA = 2;
+	}
+	 	
+	function B() {
+		this.inB = 4;
+	}
+
+	Object.prototype.inObj = 1;
+	A.prototype.inAProto = 3; 
+	B.prototype = new A;            // Hook A into B's prototype chain
+	B.prototype.constructor = B;
+	B.prototype.inBProto = 5;	 
+	
+	x = new B;	 
+	 
+	document.write(x.inObj + ', ' + x.inA + ', ' + x.inAProto + ', ' + x.inB + ', ' + x.inBProto);
+</script>
+</body>
+</html>

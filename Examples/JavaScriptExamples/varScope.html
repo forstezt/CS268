@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope</title>
+ 	<script>
+		function assignName() {
+			yourName = document.example.name.value;
+			if(yourName == "" || yourName == "undefined") {
+				yourName = "Unknown";
+			}
+			alert("name is: " + yourName);
+		}
+		function showName() {
+			try {
+				alert(yourName);
+			} catch(e) {
+				alert("Error: " + e.message);
+			}
+		}
+	</script>
+</head>
+<body>
+<form name="example">
+<input name="name" /><input type="button" value="Assign name" onclick="assignName();"<br />
+<input type="button" value="Show name" onclick="showName();" />
+</form>
+</body>
+</html>

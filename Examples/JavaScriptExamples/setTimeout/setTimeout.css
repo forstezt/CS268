@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	text-align:center;	
+}
+
+#movethis1 {
+	position        :absolute;
+	top             :0px;
+	left            :0px;
+	width           :70px;
+	height          :20px;
+	background-color:#CCC;
+	border          :1px solid #9F0;
+	padding-left    :10px;
+	padding-right   :10px;
+	padding-bottom  :10px;
+}
+
+#movethis2 {
+	position        :absolute;
+	top             :0px;
+	left            :90px;
+	width           :70px;
+	height          :20px;
+	background-color:#CCC;
+	border          :1px solid #9F0;
+	padding-left    :10px;
+	padding-right   :10px;
+	padding-bottom  :10px;
+}
+
+#movethis3 {
+	position        :absolute;
+	top             :0px;
+	left            :180px;
+	width           :70px;
+	height          :20px;
+	background-color:#CCC;
+	border          :1px solid #9F0;
+	padding-left    :10px;
+	padding-right   :10px;
+	padding-bottom  :10px;
+}
+
+#startall {
+	position        :absolute;
+	top             :0px;
+	left            :270px;
+	width           :70px;
+	height          :20px;
+	background-color:#CCC;
+	border          :1px solid #9F0;
+	padding-left    :10px;
+	padding-right   :10px;
+	padding-bottom  :10px;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+   <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+   <constant name="struts.devMode" value="false" />
+    
+   <package name="strutsPkg" namespace="/" extends="struts-default">
+		<action name="login" class="strutsPkg.ClearLogin" method="clearLogin">
+			<result>Login.jsp</result>
+		</action>
+ 		
+		<action name="validatelogin" class="strutsPkg.Login" method="validateLogin">
+			<result name="success" type="redirect">display</result> <!-- no need to copy previous request - so chain and redirectAction not needed -->
+			<result name="login" type="chain">login</result>
+			<result name="error">Error.jsp</result>
+			<result name="input">Login.jsp</result>
+		</action>
+
+		<action name="display" class="strutsPkg.Product" method="retrieveProductInformation">
+			<result name="success">DisplayProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action> 
+		
+		<action name="insertInput" class="strutsPkg.Login" method="checkLogin">
+			<result>InsertProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+ 		</action>
+		<!-- type="chain" is a bad idea in the following actions (use redirectAction) -->
+		<action name="insert" class="strutsPkg.Product" method="runInsert">
+			<result type="chain">display</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>	
+		
+		<action name="deleteInput" class="strutsPkg.Product" method="retrieveProductInformation">
+			<result>DeleteProduct.jsp</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>
+		
+		<action name="delete" class="strutsPkg.Product" method="runDelete">
+			<result type="chain">deleteInput</result>
+			<result name="login">Login.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>	
+		
+   </package>
+</struts>    

@@ -1,0 +1,82 @@
+* {
+	padding:0;
+	margin:0;
+}
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+.underConstruction {
+	color:navy;
+	text-align:center;
+}
+#bodycenter {
+	position:relative;
+	width:900px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;	
+	text-align:center;
+	background-color:#C0C0C0;
+}
+#navigation {
+    position:relative;
+	width:890px;
+	height:50px;
+    top:0px;
+	left:0px;
+	text-align:center;
+	background-color:#C0C0C0;
+	border:inset 5px green;
+}
+.menu {
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	top:5px;
+}#mcontent {
+    position:absolute;
+    width:870px;
+    top:55px;
+	left:0px;
+	background-color:#C0C0C0;
+	text-align:center;
+	padding:10px;
+	height:auto;
+	border:inset 5px green;
+}
+.datatable table {
+	border:inset green 6px;
+	background-color:#CCCCCC;
+	color:black;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse : collapse;
+}
+.datatable td {
+	border:inset 1px gray;
+	padding:5px;
+}
+.datatable th {
+	text-align:left;
+	background-color:blue;
+	border:inset 1px gray;
+	color:white;
+}
+.error {
+	color: navy;
+	font-weight: bold;	
+}
+.errorRed {
+	color: red;
+	font-weight: bold;	
+}
+.alignleft {
+	text-align:left;	
+}
+.colLeft {
+	text-align:left;		
+}
+.colRight {
+	text-align:right;		
+}

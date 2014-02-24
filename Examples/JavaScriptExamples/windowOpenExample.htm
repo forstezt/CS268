@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body onunload=moreWindows();>
+<script language=javascript>
+	function moreWindows() {
+		var wParams = "height=160,width=550,menubar=no,toolbar=no,titlebar=no," +
+		              "resizable=no,location=no,status=no,directories=no";
+
+		var adWindow = window.open("","",wParams);
+		adWindow.moveTo(230, 350);
+		var window2 = window.open("", "", wParams);
+		window2.moveTo(330, 450);
+	}
+</script>
+</body>
+
+</html>

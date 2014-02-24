@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"      
+                template="/Templates/maintemplate.xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:f="http://java.sun.com/jsf/core"
+      			xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="links">
+	<link href="CSS/classStyles.css" rel="stylesheet" />
+	<script src="JSLibrary/course.js"></script>
+</ui:define>
+<ui:define name="content">
+	<!-- omitted this from the form tag to allow the server side validation to go through: onsubmit="return validate();" -->
+	<h:form id="frmCourse" onsubmit="return validate();">
+		<table class="datatable">
+			<tr><td align="right">Call ID: </td>
+				<td><h:inputText id="c_callid" value="#{courseUtilities.c.c_callid}" required="true">
+						<f:validateLength maximum="8" minimum="3" />
+					</h:inputText>
+				</td>
+				<td><h:message for="c_callid" styleClass="error" /></td></tr>									 
+			<tr><td align="right">Name: </td>
+				<td><h:inputText id="c_name" value="#{courseUtilities.c.c_name}" required="true">
+						<f:validateLength maximum="120" minimum="2" />
+				    </h:inputText>
+				</td>
+				<td><h:message for="c_name" styleClass="error" /></td></tr>					  
+			<tr><td align="right">Credits: </td>
+				<td><h:inputText id="c_credits" value="#{courseUtilities.c.c_credits}" required="true">
+						<f:validateLongRange minimum="0" maximum="10" />	
+				    </h:inputText>
+				</td>
+				<td><h:message for="c_credits" styleClass="error" /></td></tr>						 
+			<tr><td align="right">Department: </td>
+				<td><h:selectOneMenu value="#{courseUtilities.c.d_id}">
+			           	<f:selectItems value="#{courseUtilities.dData}" />
+			        </h:selectOneMenu>
+				</td>
+				<td></td></tr>				            
+			<tr><td></td>
+				<td><h:commandButton value="Submit" action="#{courseUtilities.insertCourse}"/></td>
+				<td></td></tr>
+			<tr><td colspan="3" style="text-align:center;">
+					<h:outputLabel value="#{courseUtilities.msg}" />
+				</td></tr>
+		</table>
+	</h:form>
+</ui:define>
+</ui:composition>

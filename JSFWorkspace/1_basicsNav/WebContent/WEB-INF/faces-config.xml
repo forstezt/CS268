@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+              version="2.0">
+	<managed-bean>
+		<managed-bean-name>whatsYourName</managed-bean-name>
+		<managed-bean-class>JSFpkg.WhatsYourName</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean> 
+	<!-- The following rules are sending to the default view specified by the string returned by
+		 the invoked method.  These can be deleted with no change in functionality.
+		 If needed, however, you could specify a different view that didn't match
+		 the defaults used in <to-view-id> (like nameForm, showName, error) could be something else
+	 -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>nameForm</from-outcome>
+			<to-view-id>nameForm.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>showName</from-outcome>
+			<to-view-id>showName.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>error.xhtml</to-view-id>
+		</navigation-case>		
+	</navigation-rule>             
+</faces-config>

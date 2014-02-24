@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+
+	<managed-bean>
+		<managed-bean-name>productutils</managed-bean-name>
+		<managed-bean-class>jsfPkg.ProductUtils</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>DisplayProduct</from-outcome>
+			<to-view-id>/DisplayProduct.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>AddProduct</from-outcome>
+			<to-view-id>/AddProduct.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>EditProduct</from-outcome>
+			<to-view-id>/EditProduct.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>DeleteProduct</from-outcome>
+			<to-view-id>/DeleteProduct.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/Error.jsp</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+</faces-config>

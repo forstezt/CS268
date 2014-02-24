@@ -1,0 +1,146 @@
+<html>
+<head>
+	<title>Goose Down Sleeping Bag</title>
+	<script language="javascript">
+	</script>
+<script language= javascript>
+	function validateSelectList() {
+		if(document.frmOrderItem.selExample.selectedIndex == -1) {
+			alert("Please select something from the select list");
+			document.frmOrderItem.selExample.focus();
+			return false;
+		}
+		var selectedIndex = document.frmOrderItem.selExample.selectedIndex;
+		alert(document.frmOrderItem.selExample[selectedIndex].value + " is selected");
+		return true;
+	}
+	
+	function validateRadioSelected_1() {
+		if(document.frmOrderItem.spectrum1[0].checked == false && 
+		   document.frmOrderItem.spectrum1[1].checked == false) {
+			alert("Please select a color");
+			document.frmOrderItem.spectrum1[0].focus();
+			return false;
+		}
+		if(document.frmOrderItem.spectrum1[0].checked) {
+			alert(document.frmOrderItem.spectrum1[0].value + " is checked");
+		} else if(document.frmOrderItem.spectrum1[1].checked) {
+			alert(document.frmOrderItem.spectrum1[1].value + " is checked");		
+		}
+		return true;
+	}
+	
+	// this version works no matter how many radio inputs are being looked at
+	function validateRadioSelected_2() {
+		var index = -1;
+		for(var i=0; i<document.frmOrderItem.spectrum2.length; i++) {
+			if(document.frmOrderItem.spectrum2[i].checked) {
+				index = i;
+				break;
+			}
+		}
+		if(index == -1) {
+			alert("Please select a color");
+			document.frmOrderItem.spectrum2[0].focus();	
+			return false;
+		}
+		alert(document.frmOrderItem.spectrum2[index].value + " is checked");
+		return true;
+	}
+	function numberChecked() {
+	    var number = 0;
+	    var message = "";
+	    if(frmOrderItem.check1.checked == true) {
+	        number = number + 1;
+	        message = frmOrderItem.check1.value + "\n"
+	    }
+	    if(frmOrderItem.check2.checked == true) {
+	        number = number + 1;
+	        message = message + frmOrderItem.check2.value + "\n";
+	    }
+	    if(frmOrderItem.check3.checked == true) {
+	        number = number + 1;
+	        message = message + frmOrderItem.check3.value + "\n";
+	    }
+	    alert("Number checked is: " + number + "\n" + "Values are:\n" + message);
+	}
+	function DisplayElements() {
+		var msg = "";
+		msg = "Element name\t\tElement value\n";
+		for(var i = 0; i < document.frmOrderItem.elements.length; i++) {
+			msg += document.frmOrderItem.elements[i].name + "\t\t" +
+			       document.frmOrderItem.elements[i].value + "\n";
+		}
+		alert(msg);
+	}	
+</script>
+</head>
+<body>
+<form name="frmOrderItem" action="omit for now">
+	<select name=selExample size=3>
+	<option value=one>First option</option>
+	<option value=two>Second option</option>
+	<option value=three>Third option</option>
+	<option value=four>Fourth option</option>
+	</select>
+	<br>
+	<input type=button name=btnValidate_1 onclick="validateSelectList();" value="Validate selection">
+	<br><br>
+	<input type=radio value=red name=spectrum1>Red<br>
+	<input type=radio value=green name=spectrum1>Green<br>
+	<input type=button name=btnValidate_2 onclick="validateRadioSelected_1();" value="Validate Radio Input">
+	<br><br>
+	<input type=radio value=violet name=spectrum2>Violet<br>
+	<input type=radio value=indigo name=spectrum2>Indigo<br>
+	<input type=radio value=blue name=spectrum2>Blue<br>
+	<input type=radio value=green name=spectrum2>Green<br>
+	<input type=radio value=yellow name=spectrum2>Yellow<br>
+	<input type=radio value=orange name=spectrum2>Orange<br>
+	<input type=radio value=red name=spectrum2>Red<br>
+	<input type=button name=btnValidate_2 onclick="validateRadioSelected_2();" value="Validate Radio Input"><br />
+	Check 1 <input type="checkbox" name="check1" value="chk1" /><br />
+	Check 2 <input type="checkbox" name="check2" value="chk2" /><br />
+	Check 3 <input type="checkbox" name="check3" value="chk3" /><br />	
+	<input type="button" onclick="numberChecked();" value="How many checkboxes are checked?" /> <input type=reset name=btnReset value="Clear form"><br />
+	<p>
+	<!--table displaying CWT logo and page title -->
+	<table width="80%" align="center">
+	  <tr>
+	    <td><img src="tents.jpg" width="200" height="174" align="right" style="WIDTH: 200px; HEIGHT: 174px"></td>
+	    <td><big><b>&nbsp;&nbsp;<span class="style1">3-Season Tent</span></big></td>
+	  </tr>
+	</table>
+	<!--table and form displaying inventory data -->
+	<table width="80%" border="5" cellspacing="3" cellpadding="5" align="center">
+		  <tr>
+		    <th width="20%"><div align="left">Size</div></th>
+		    <th width="20%"><div align="left">Color</div></th>
+		    <th width="20%"><div align="left">Price</div></th>
+		    <th width="20%"><div align="left">In Stock?</div></th>
+		  </tr>
+		  <tr><td align=middle>Rectangular</td>
+		    <td align=middle>Blue</td>
+		    <td align=middle>259.99</td>
+		    <td align=middle>Yes</td></tr>
+		</table>
+	</p>
+	<p>
+	
+	<!--table displaying form controls -->
+	<table width="80%" cellspacing="3" cellpadding="5" align="center">
+	  <tr>
+	    <td width="70%"><big>Desired Quantity</big> 
+	    <input type="text" name="txtQuantity" size="10"></td>
+	    <td align="right" width="15%"><input type="button" name=btnElements value="Display form's elements" onclick="DisplayElements();"></td>
+	  </tr>
+	</table></p>
+	<!-- table summarizing order -->
+	<p>
+	<table width="80%" align="center" border ID="Table1">
+		<tr><td align="right">Subtotal:</td><td><input type="text" name="txtSubTotal"></td></tr>
+		<tr><td align="right">Tax:</td><td><input type="text" name="txtTax"></td></tr>
+		<tr><td align="right">Order Total:</td><td><input type="text" name="txtOrderTotal"></td></tr>
+	</table>
+	</p>
+</form>
+</body></html>

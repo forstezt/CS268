@@ -1,0 +1,24 @@
+<ui:composition template="/Templates/maintemplate.xhtml"
+		        xmlns="http://www.w3.org/1999/xhtml"
+		        xmlns:f="http://java.sun.com/jsf/core"
+		        xmlns:h="http://java.sun.com/jsf/html"
+		        xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="content">
+	<h:form>
+		<h:panelGrid columns="2" styleClass="datatable">
+			Call ID: <h:inputText value="#{courseUtilities.c_callid}" />
+			Name: <h:inputText value="#{courseUtilities.c_name}" />
+			Credits: <h:inputText value="#{courseUtilities.c_credits}" />
+			<!-- selectOneListBox is similar - except you can display more than one at a time 
+			     use the size attribute to set how many items will be visible in the scroll area
+			     or omit it and the list will expand to show all items -->
+			Department: <h:selectOneMenu value="#{courseUtilities.d_id}">
+			            	<f:selectItems value="#{courseUtilities.dData}" />
+			            </h:selectOneMenu>
+			<h:outputLabel value="" /><h:commandButton value="Submit" action="#{courseUtilities.insertCourse}" />
+			<h:outputLabel value="" /><h:outputLabel value="#{courseUtilities.msg}" />
+		</h:panelGrid>
+	</h:form>
+</ui:define>
+</ui:composition>
+

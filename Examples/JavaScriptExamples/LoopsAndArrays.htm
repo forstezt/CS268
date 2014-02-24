@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<script language=javascript>
+    var list = new Array();
+    list[0] = "one";
+    list[1] = "two";
+    list[2] = "three";
+    list[3] = "four";
+    
+    var message = new String();
+    var i = 0;
+    do {
+        message = message + list[i];
+        i++;
+    } while(i < 4);
+    alert(message);
+    
+    message = "";
+    for(i = 0; i < 4; i++) {
+        message = message + list[i];
+    }
+    alert(message);
+    
+    message = "";
+    i = 0;
+    while(i < 4) {
+        message = message + list[i];
+        i++;
+    }
+    alert(message);
+    
+    function displayColors() {
+        var i = 0;
+        var colors = "";
+        do {
+            colors = colors + document.example.color[i].value + "\n";
+            i++;
+        } while(i < document.example.color.length);
+        alert(colors);
+    }
+    
+</script>
+<form name=example>
+    <input type=radio name=color value=red />Red<br />
+    <input type=radio name=color value=blue />Blue<br />
+    <input type=radio name=color value=green />Green<br />
+    <input type=radio name=color value=yellow />Yellow<br />
+    <input type=radio name=color value=purple />Purple<br />
+    <input type=radio name=color value=white />White<br />
+    <input type=button onclick=displayColors() value="show colors" />
+</form>
+
+
+</body>
+</html>

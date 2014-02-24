@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+@import url("all.css");
+@import url("idStyles.css");
+.dataTable {
+	border:inset green 6px;
+	background-color:#CCCCCC;
+	color:black;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse : collapse;
+}
+.dataTable td {
+	text-align:left;
+	border:inset 1px gray;
+	padding:5px;
+}
+.dataTable th {
+	text-align:left;
+	background-color:blue;
+	border:inset 1px gray;
+	color:white;
+}

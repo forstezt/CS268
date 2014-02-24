@@ -1,0 +1,71 @@
+* {
+	margin :0px;
+	padding:0px;
+}
+body {
+	background-color:#CCC;
+}
+#bodycenter {
+	width       :730px;	/* change this as needed to fit images */
+	height      :auto;
+	position    :relative;
+	margin-left :auto;
+	margin-right:auto;
+	text-align  :center;
+}
+#banner {
+	position  :relative;
+	text-align:center;
+	background-color:#000;
+	width     :730px;	/* change this as needed to fit images (should match bodycenter's width */
+	height    :40px;
+	z-index   :1;
+	border    :1px solid #0000FF;
+}
+#gallery {
+	position:relative;
+	width   :730px;  	/* change this as needed to fit images (should match bodycenter's width */
+	height  :auto;
+	background-color:#000000;
+	border  :1px solid #0000FF;
+}
+#popupphoto {
+	position      :relative;
+    display       :none;
+	margin-left   :auto;
+	margin-right  :auto;
+	top           :-20px;
+	width         :500px;
+	height        :auto;
+	background-color: #CCC;
+	border        : 1px solid #9F0;
+	padding-left  :10px;
+	padding-right :10px;
+	padding-bottom:10px;
+	text-align    :right;
+	z-index       :100;
+}
+#popupbanner {
+	width :500px;
+	height:20px;
+}
+#filename {
+	position   :absolute;	
+	left       :10px;
+	font-weight:bold;
+}
+#close {
+	position   :absolute;
+	left       :473px;
+	font-weight:bold;
+} 
+.image {
+	border:3px solid #000;	
+	width :70px;	/* change this if needed to fit thumbnails nicely into gallery div */
+}
+.HugeWhiteItalicText {
+	font-size  :30px;
+	font-style :italic;
+	color      :#FFFFFF;
+	font-weight:bold;
+}

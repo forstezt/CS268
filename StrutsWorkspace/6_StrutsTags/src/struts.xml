@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+   <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+   <constant name="struts.devMode" value="false" />
+    
+   <package name="strutsPkg" namespace="/" extends="struts-default">
+   
+		<action name="display" class="strutsPkg.Product" method="retrieveProductInformation">
+			<result name="success" type="dispatcher">DisplayProduct.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action> 
+		
+		<action name="input">
+			<result name="success">InputInsert.jsp</result>
+		</action>
+
+		<action name="insert" class="strutsPkg.Product" method="runInsert">
+			<result type="chain">display</result>
+			<result name="error">Error.jsp</result>
+		</action>	
+		
+		<action name="delete" class="strutsPkg.Product" method="runDelete">
+			<result name="success" type="chain">display</result>
+			<result name="error">Error.jsp</result>
+		</action>	
+		
+   </package>
+</struts>    	

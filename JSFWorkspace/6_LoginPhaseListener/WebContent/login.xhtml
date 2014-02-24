@@ -1,0 +1,57 @@
+<ui:composition template="/Templates/logintemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="content">
+	<h:form id="login">
+	<table class="datatable">
+	    <tr><td align="right">UserID:&#160;</td>
+	        <td><h:inputText id="f_userid" value="#{loginUtilities.f_userid}" required="true">
+	        		<f:validateLength maximum="8" minimum="3" />	        
+	            </h:inputText><br />
+	            <h:messages for="f_userid" styleClass="error" />
+	        </td>
+	    </tr>
+	    <tr><td align="right">PIN:&#160;</td>
+	    	<td><h:inputSecret id="f_pin" value="#{loginUtilities.f_pin}" required="true">
+					<f:validateRegex pattern="^\d{4}$" />
+	    	    </h:inputSecret><br />
+	    	    <h:messages for="f_pin" styleClass="error" />
+	    	</td>
+	    </tr>
+	    <tr><td>&#160;</td><td align="left" colspan="3"><h:commandButton value="Login" action="#{loginUtilities.validateLogin}" /></td></tr>
+	    <tr><td colspan="2" style="text-align:center;"><span class="invalidlogin">${loginUtilities.msg}</span></td></tr>
+	    <tr><td colspan="2" align="left">Valid Logins (for testing purposes):</td></tr>
+	    <tr>
+	        <td><b>UserID</b></td>
+	        <td><b>PIN</b></td>
+	    </tr>
+	    <tr>
+	        <td>coxk</td>
+	        <td>1181</td>
+	    </tr>
+	    <tr>
+	        <td>blanj</td>
+	        <td>1075</td>
+	    </tr>
+	    <tr>
+	        <td>willj</td>
+	        <td>8531</td>
+	    </tr>
+	    <tr>
+	        <td>shenl</td>
+	        <td>1690</td>
+	    </tr>
+	    <tr>
+	        <td>browp</td>
+	        <td>9899</td>
+	    </tr>
+	    <tr>
+	        <td>whitj</td>
+	        <td>3214</td>
+	    </tr>	
+	</table>
+	</h:form>
+</ui:define>
+</ui:composition>

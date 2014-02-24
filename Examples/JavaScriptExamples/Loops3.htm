@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<script type="text/javascript">
+function WhileLoop() {
+	var counter = 0;
+	var numTimes = parseInt(frmLoop.numTimes.value);
+	while(counter < numTimes) {
+		document.write(counter + "<br>");
+		counter = counter + 1;
+	}
+}
+function DoLoop() {
+	var i = 0;
+	var numTimes = parseInt(frmLoop.numTimes.value);
+	if(i < numTimes) {
+	    do {
+		    document.write(i + "<br>");
+		    i = i + 1;
+	    } while (i < numTimes);
+	}
+}
+function ForLoop() {
+	var numTimes = parseInt(frmLoop.numTimes.value);
+	for(var i = 0; i < numTimes; i++) {
+		document.write(i + "<br>");
+	}
+}
+function DisplayElements() {
+	var msg = "";
+	var i = 0;
+	while(i < frmLoop.elements.length) {
+	      msg = msg + frmLoop.elements[i].name + "=" +
+	                  frmLoop.elements[i].value + "\n";
+	      i = i + 1;
+	}
+	alert(msg);
+}
+function ValidateRadioSelected() {
+    if(frmLoop.color[0].checked == true || frmLoop.color[1].checked == true ||
+       frmLoop.color[2].checked == true) {
+        if(frmLoop.color[0].checked == true) {
+		    alert(frmLoop.color[0].value + " is checked");
+    		return true;       
+	    } 
+        if(frmLoop.color[1].checked == true) {
+		    alert(frmLoop.color[1].value + " is checked");
+    		return true;       
+	    } 
+        if(frmLoop.color[2].checked == true) {
+		    alert(frmLoop.color[2].value + " is checked");
+    		return true;       
+	    } 
+    } 
+	alert("Please select a color");
+	frmLoop.color[0].focus();
+	return false;
+    
+}
+
+</script>
+<form name="frmLoop" id="frmLoop" action="ad.htm">
+    Please enter the number of times to loop: <input type="text" name="numTimes" /><br />
+    <input type="button" value="while loop" name="while" onclick="WhileLoop();" /><br />
+    <input type="button" value="do loop" onclick="DoLoop();" /><br />
+    <input type="button" value="for loop" onclick="ForLoop();" /><br />
+    <input type="button" value="display elements" onclick="DisplayElements();" /><br />
+    
+    <input type="radio" name="color" value="red" />red<br />
+    <input type="radio" name="color" value="green" />green<br />
+    <input type="radio" name="color" value="yellow" />yellow<br />
+    <input type="submit" value="validate radio buttons" onclick="return ValidateRadioSelected();" />
+</form>
+</body>
+</html>

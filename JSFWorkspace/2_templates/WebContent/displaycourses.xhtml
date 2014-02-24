@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+<ui:composition template="/Templates/maintemplate.xhtml">
+<ui:define name="content">
+	<h:dataTable value="${courseUtilities.cData}"
+	             var="row"
+	             rowClasses="row1,row2"
+	             columnClasses="colLeft"
+	             styleClass="datatable">
+   		<h:column>
+			<f:facet name="header">Department</f:facet>
+			<h:outputLabel value="#{row.d_name}" />
+    	</h:column>	
+		<h:column>
+			<f:facet name="header">Callid</f:facet>
+			<h:outputLabel value="#{row.c_callid}" />
+    	</h:column>	
+ 		<h:column>
+			<f:facet name="header">Name</f:facet>
+			<h:outputLabel value="#{row.c_name}" />
+    	</h:column>	
+    	<h:column>
+			<f:facet name="header">Credits</f:facet>
+			<h:outputLabel value="#{row.c_credits}" />
+    	</h:column> 
+	</h:dataTable>
+</ui:define>
+</ui:composition>
+</body>
+</html>

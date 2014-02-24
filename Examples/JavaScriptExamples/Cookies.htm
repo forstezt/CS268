@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Cookie Test</title>
+</head>
+<body>
+<script language="javascript">
+    alert(document.cookie);
+    document.cookie = "userID=smithjp;expires=Wednesday, 02-Mar-2009 12:00:00 GMT;";
+    alert(document.cookie);
+
+    function makeCookies1() {
+        for(var i=0; i<20; i++) {
+            document.cookie = "userID" + i + "=user" + i + ";expires=Wednesday, 02-Mar-2009 12:00:00 GMT;";
+        }
+    }
+    function makeCookies2() {
+        for(var i=0; i<100; i++) {
+            document.cookie = "userID" + i + "=user" + i + ";expires=Wednesday, 02-Mar-2009 12:00:00 GMT;";
+        }
+    }
+    function readCookies() {
+        alert(document.cookie);
+    }
+</script>
+<form name=example>
+    <input type=button onclick="makeCookies1();" value="Create 20 cookies" /><br />
+    <input type=button onclick="makeCookies2();" value="Create 100 cookies" /><br />
+    <input type=button onclick="readCookies();" value="Read cookies" />    
+</form>
+</body>
+</html>

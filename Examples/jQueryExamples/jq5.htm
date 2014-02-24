@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<script src="jquery.js"></script>
+	<script>
+		function showBox() {
+		  // the parameter to fadeIn is milliseconds to complete the fade
+		  $("#divBox").fadeIn(2000);
+		}
+	</script>	
+</head>
+<body>
+<div id="divBox" 
+     style="padding:50px;background-color:#89BC38;text-align:center;display:none;">
+  <b>Hello, world!</b>
+</div>
+<input type="button" value="Show Box" onclick="showBox();" />
+</body>
+</html>
+

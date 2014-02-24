@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+              version="2.0">
+              
+    <lifecycle>
+    	<phase-listener>jsfPkg.PhaseListenerLogin</phase-listener>
+		<phase-listener>jsfPkg.PhaseListenerCaching</phase-listener>    	
+		<phase-listener>jsfPkg.PhaseListenerLifeCycle</phase-listener>
+	</lifecycle>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>addcourse</from-outcome>
+			<to-view-id>addcourse</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editcourse</from-outcome>
+			<to-view-id>editcourse</to-view-id>
+			<redirect />
+		</navigation-case>				
+	</navigation-rule>
+	
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+        </locale-config>
+        <message-bundle>jsfPkg.MyMessages</message-bundle><!-- replaces default validation messages -->
+    </application>
+</faces-config>

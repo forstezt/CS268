@@ -1,0 +1,26 @@
+<html><head><title>Quiz 2</title></head>
+<body>
+<script type="text/javascript">
+    function validate() {
+        // code ensuring a date is entered
+        if(document.frmQuiz2.txtBirthDate.value == "") {
+            alert("Please enter your birthdate");
+            document.frmQuiz2.txtBirthDate.select();
+            return false;
+        }
+        // code ensuring a valid date is entered
+        if(isNaN(document.frmQuiz2.txtBirthDate.value) == true) {
+            alert("Please enter a valid date");
+            document.frmQuiz2.txtBirthDate.select();
+            return false;        
+        }   
+        return true;
+    }
+</script>
+<form name="frmQuiz2" action="quiz2next.htm">
+    Please enter your birthdate: <input type="text" name="txtDOB" /> 
+    <input type="submit" onclick="Validate();" value="Submit" />
+</form>
+</body></html>
+
+

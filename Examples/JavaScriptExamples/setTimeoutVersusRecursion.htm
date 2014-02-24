@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>setTimeout versus Recursion</title>
+</head>
+<body>
+<script>
+	function startSetTimeout(param) {
+		if(param > 3) return;
+		setTimeout("startSetTimeout(" + (param + 1) + ")", 20);
+		alert("After setTimeout, param is: " + param);
+		
+	}
+	function startRecursion(param) {
+		if(param > 3) return;
+		startRecursion(param + 1);
+		alert("After call to startRecursion, param is: " + param);
+	}
+</script>
+<input type="button" value="Start setTimeout" onclick="startSetTimeout(1);" /><br />
+<input type="button" value="Start recursion" onclick="startRecursion(1);" />
+</body>
+</html>

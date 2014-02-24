@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"      
+                template="/Templates/logintemplate.xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:f="http://java.sun.com/jsf/core"
+      			xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="links">
+	<link href="CSS/classStyles.css" rel="stylesheet" type="text/css" />
+</ui:define>
+<ui:define name="content">	
+#{loginutilities.clearLogin}
+	<h:form>
+	<table class="datatable" style="width:400px;">
+	    <tr><td align="right">UserID:</td>
+	        <td align="left"><h:inputText id="f_userid" value="#{loginutilities.f_userid}" required="true">
+	        		<f:validateLength maximum="8" minimum="3" />	        
+	            </h:inputText>
+	        </td>
+			<td><h:message for="f_userid" styleClass="error" /></td>	        
+	    </tr>
+	    <tr><td align="right">PIN:</td>
+	    	<td align="left"><h:inputSecret id="f_pin" value="#{loginutilities.f_pin}" required="true">
+					<f:validateRegex pattern="^\d{4}$" />
+	    	    </h:inputSecret>
+	    	</td>
+	    	<td><h:message for="f_pin" styleClass="error" /></td>	    	
+	    </tr>
+	    <tr><td></td><td align="left" colspan="3"><h:commandButton value="Login" action="#{loginutilities.validateLogin}" /></td></tr>
+	    <tr><td colspan="3" style="text-align:center;"><span class="invalidlogin">${loginutilities.msg}</span></td></tr>
+	    <tr><td colspan="3" align="left">Valid Logins (for testing purposes):</td></tr>
+	    <tr>
+	        <td><b>UserID</b></td>
+	        <td colspan="2"><b>PIN</b></td>
+	    </tr>
+	    <tr>
+	        <td>coxk</td>
+	        <td colspan="2">1181</td>
+	    </tr>
+	    <tr>
+	        <td>blanj</td>
+	        <td colspan="2">1075</td>
+	    </tr>
+	    <tr>
+	        <td>willj</td>
+	        <td colspan="2">8531</td>
+	    </tr>
+	    <tr>
+	        <td>shenl</td>
+	        <td colspan="2">1690</td>
+	    </tr>
+	    <tr>
+	        <td>browp</td>
+	        <td colspan="2">9899</td>
+	    </tr>
+	    <tr>
+	        <td>whitj</td>
+	        <td colspan="2">3214</td>
+	    </tr>	
+	</table>
+	</h:form>
+</ui:define>
+</ui:composition>

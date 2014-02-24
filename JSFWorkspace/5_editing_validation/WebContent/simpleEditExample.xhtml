@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"      
+                template="/Templates/maintemplate.xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:f="http://java.sun.com/jsf/core"
+      			xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="links">
+	<link href="CSS/classStyles.css" rel="stylesheet" />
+</ui:define>
+<ui:define name="content">
+<h:form>
+	<h:dataTable value="#{courseUtilities.cData}" 
+	             var="row" 
+				 columnClasses="colLeft,colLeft,colLeft"	             
+	             styleClass="datatable">
+        <h:column>
+           <h:commandButton rendered="#{row.editable}" action="#{courseUtilities.updateCourse}" value="Save" >
+				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			           
+           </h:commandButton>
+           <h:commandButton rendered="#{row.editable}" action="#{courseUtilities.setEditableFalse}" value="Cancel" />
+           <h:commandButton rendered="#{not row.editable}" action="#{courseUtilities.setEditableTrue}" value="Edit">
+ 				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			                      	          
+           </h:commandButton>
+         </h:column>
+   		<h:column>
+			<f:facet name="header">Department</f:facet>
+			<h:outputLabel rendered="#{not row.editable}">#{row.d_name}</h:outputLabel>
+			<h:selectOneMenu value="#{row.d_id}" rendered="#{row.editable}">
+			   	<f:selectItems value="#{courseUtilities.dData}" />
+			</h:selectOneMenu>
+    	</h:column>	
+		<h:column>
+			<f:facet name="header">Callid</f:facet>
+			<h:outputLabel value="#{row.c_callid}" rendered="#{not row.editable}" />
+ 			<h:inputText id="c_callid" value="#{row.c_callid}" rendered="#{row.editable}" />
+    	</h:column>	
+	</h:dataTable>
+	<h:outputLabel value="#{courseUtilities.msg}" styleClass="blue" />	
+</h:form>
+</ui:define>
+</ui:composition>

@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>JavaScript Arithmetic and Concatenation Operations</title>
+	<script type="text/javascript">
+		function AddValues()	{
+		}
+		
+		function ConcatenateValues()	{
+			var Input1 = frmFormAdd.txtInput1.value;
+			var Input2 = frmFormAdd.txtInput2.value;
+			frmFormAdd.txtResult.value = Input1 + Input2;
+		}
+		
+		function AddTruncateValues()	{
+		}
+		
+		function ClearValues()	{
+			frmFormAdd.txtInput1.value = "";
+			frmFormAdd.txtInput2.value = "";
+			frmFormAdd.txtResult.value = "";
+		}
+	</script>
+</head>
+<body>
+	<form name="frmFormAdd" action="">
+		<table>
+		<tr><td><input type="text" name="txtInput1" size="5"></td>
+			<td>+</td>
+			<td><input type="text" name="txtInput2" size="5"></td>
+			<td>=</td>
+			<td><input type="text" name="txtResult" size="5"></td></tr>	
+		</table>
+		<br />
+		<table>
+			<tr><td><input type="button" name="cmdAdd" value="Add" style="WIDTH: 146px; HEIGHT: 24px" onclick="AddValues()" /></td></tr>
+			<tr><td><input type="button" name="cmdConcatenate" value="Concatenate" id=Button1 style="WIDTH: 146px; HEIGHT: 24px" onclick="ConcatenateValues()" /></td>
+			<tr><td><input type="button" name="cmdAddTruncate" value="Add &amp; Truncate" style="WIDTH: 146px; HEIGHT: 24px" onclick="AddTruncateValues()" /></td>
+			<tr><td><input type="button" name="cmdClear" value="Clear" style="WIDTH: 146px; HEIGHT: 24px" onclick="ClearValues()" /></td></tr>	
+		</table>
+	</form>
+</body>
+</html>

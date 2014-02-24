@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery.js"></script>
+    <script>
+		$(function(){
+			// space between ex and .hide is necessary
+			$(".ex .hide").click(function(){
+				$(this).parents(".ex").hide("slow");
+			});
+			// alternate syntax for first line of code above:
+			// $(".ex").find(".hide").click(function(){
+		});
+    </script>
+    <style> 
+        .ex {
+            background-color:#e5eecc;
+            padding:7px;
+            border:solid 1px #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+    <h3>Island Trading</h3>
+    <div><!-- add class="ex" to this div tag or this button won't work -->
+        <input type="button" class="hide" value="Hide me" />
+        <p>Contact: Helen Bennett<br /> 
+           Garden House Crowther Way<br />
+           London</p>
+    </div>
+    
+    <h3>Paris Specialites</h3>
+    <div class="ex">
+        <!-- alternate HTML 5 button -->
+        <button class="hide">Hide me</button>
+        <p>Contact: Marie Bertrand<br /> 
+           265, Boulevard Charonne<br />
+           Paris</p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+<script language=javascript>
+	function WhileLoop() {
+		var counter = 0;
+		while(counter < 5) {
+			document.write(counter + "<br>");
+			counter = counter + 1;
+		}
+	}
+	function DoLoop() {
+		var i = 0;
+		do {
+			document.write(i + "<br>");
+			i = i + 1;
+		} while (i < 5);
+	}
+	function ForLoop() {
+		for(var i = 0; i < 10000; i = i + 1) {
+			document.write(i + " ");
+		}
+	}
+	function ArrayExample() {
+		var classes = new Array();
+		classes[0] = "CS 491";
+		classes[1] = "CS 352";
+		classes[2] = "CS 319";
+		classes[3] = "CS 163";
+		
+		for (var i = 0; i < classes.length; i++) {
+			document.write(classes[i] + "<br>");
+		}
+	}
+	function DisplayElements() {
+		var msg = "";
+		for(var i = 0; i < document.frmOrderItem.elements.length; i++) {
+		      msg += document.frmOrderItem.elements[i].name + "  " +
+		      document.frmOrderItem.elements[i].value + "\n";
+		}
+		alert(msg);
+	}
+	function validateRadioInputs() {
+		if(document.frmOrderItem.nameList[0].checked == false &&
+		   document.frmOrderItem.nameList[1].checked == false &&
+		   document.frmOrderItem.nameList[2].checked == false &&
+		   document.frmOrderItem.nameList[3].checked == false &&
+		   document.frmOrderItem.nameList[4].checked == false) {
+		   alert("Please select a name");
+		   document.frmOrderItem.nameList[0].focus();
+		   return;
+		}
+		// now display the value of the select radio input
+		if(document.frmOrderItem.nameList[0].checked) {
+			alert("You selected: " + document.frmOrderItem.nameList[0].value);
+		} else if(document.frmOrderItem.nameList[1].checked) {
+			alert("You selected: " + document.frmOrderItem.nameList[1].value);
+		} else if(document.frmOrderItem.nameList[2].checked) {
+			alert("You selected: " + document.frmOrderItem.nameList[2].value);
+		} else if(document.frmOrderItem.nameList[3].checked) {
+			alert("You selected: " + document.frmOrderItem.nameList[3].value);
+		} else {
+			alert("You selected: " + document.frmOrderItem.nameList[4].value);			
+		}
+	}
+	function validateRadioLoop() {
+		var checked = false;
+		for(var i = 0; i < document.frmOrderItem.nameList.length; i++) {
+			if(document.frmOrderItem.nameList[i].checked) {
+				checked = true;
+				break;
+			}
+		}
+		if(checked == true) {
+			alert(document.frmOrderItem.nameList[i].value + " is checked");
+		} else {
+			alert("Please select a name");
+			document.frmOrderItem.nameList[0].focus();	
+		}	
+	}
+</script>
+<form name=frmOrderItem>
+	<input type=text name="userName"><br>
+	<input type=button onclick="WhileLoop();" value="While Loop">
+	<input type=button onclick="DoLoop();" value="Do Loop"> 
+	<input type=button onclick="ForLoop();" value="For Loop"> 
+	<input type=button onclick="ArrayExample();" value="Array Example"> 
+	<input type=button onclick="DisplayElements();" value="Display Elements"><br>
+	Choose your name:<br>
+	<input type=radio name=nameList value="Mike">Mike<br>
+	<input type=radio name=nameList value="Janet">Janet<br>
+	<input type=radio name=nameList value="Mark">Mark<br>
+	<input type=radio name=nameList value="Kathy">Kathy<br>
+	<input type=radio name=nameList value="Joe">Joe<br>
+	<input type=button onclick=validateRadioInputs(); value="Validate Radio Inputs"><br>
+	<input type=button onclick=validateRadioLoop(); value="Validate Radio Inputs with a Loop"><br>
+</form>
+</body>
+
+</html>

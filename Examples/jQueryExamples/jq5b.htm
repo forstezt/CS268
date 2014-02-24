@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<script src="jquery.js"></script>
+	<script>
+		function showBox() {
+		  // This fades in any element with the class attribute value divBoxes
+		  $(".divBoxes").fadeIn(2000);
+		}
+	</script>
+</head>
+<body>
+<div class="divBoxes" style="background-color:#89BC38;text-align:center;display:none;">
+  <b>Hello from box1!</b>
+</div>
+<div class="divBoxes" 
+     style="padding:50px;background-color:#0000EE;text-align:center;display:none;">
+  <b>Hello from box2!</b>
+</div>
+<input type="button" value="Show Boxes" onclick="showBox();" />
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<ui:composition template="/Templates/maintemplate.xhtml"
+				xmlns="http://www.w3.org/1999/xhtml"      
+				xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:f="http://java.sun.com/jsf/core"
+      			xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="links">
+	<link href="CSS/classStyles.css" rel="stylesheet" />
+</ui:define>
+<ui:define name="content">
+<h:form id="frmEditCourse">
+	<h:dataTable value="#{courseUtilities.cData}" var="row">	             
+        <h:column>
+           	<h:commandButton rendered="#{row.editable}" action="#{courseUtilities.updateCourse}" value="Save">
+				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			           
+           	</h:commandButton>
+           	<h:commandButton rendered="#{not row.editable}" action="#{courseUtilities.setEditableTrue}" value="Edit">
+				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			                      	
+           	</h:commandButton>
+           	<h:outputLabel rendered="#{not row.editable}"></h:outputLabel>
+           	<h:outputLabel rendered="#{not row.editable}"></h:outputLabel>
+		</h:column>
+		<h:column>
+			<h:outputLabel value="#{row.c_callid}" />
+    	</h:column>	
+    	<h:column>
+			<h:outputLabel value="#{row.c_credits}" rendered="#{not row.editable}" />
+			<h:inputText id="c_credits" value="#{row.c_credits}" rendered="#{row.editable}" />
+    	</h:column> 	
+	</h:dataTable>
+</h:form>
+</ui:define>
+</ui:composition>
+
+

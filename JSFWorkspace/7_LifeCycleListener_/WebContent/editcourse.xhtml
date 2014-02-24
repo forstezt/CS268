@@ -1,0 +1,64 @@
+<ui:composition template="/Templates/maintemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="content">
+<h:form id="frmEditCourse">
+<!-- JavaScript validation doesn't work with a datatable - take a look at the generated names
+     for each input when editing a row (view source) to see why this is a problem -->
+	<h:dataTable value="#{courseUtilities.cData}"
+	             var="row"
+	             styleClass="datatable"
+	             columnClasses="colLeft,colLeft,colLeft,colLeft,colLeft,colLeft">	             
+        <h:column>
+           	<h:commandButton rendered="#{row.editable}"     action="#{courseUtilities.updateCourse}"     value="Save"   onclick="return confirm('Save changes?');">
+				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			           
+           	</h:commandButton>
+           	<h:outputLabel rendered="#{row.editable}">&#160;</h:outputLabel>
+           	<h:commandButton rendered="#{row.editable}"     action="#{courseUtilities.setEditableFalse}" value="Cancel" />
+           	
+           	<h:commandButton rendered="#{not row.editable}" action="#{courseUtilities.setEditableTrue}"  value="Edit">
+				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			                      	
+           	</h:commandButton>
+           	<h:outputLabel rendered="#{not row.editable}">&#160;</h:outputLabel>
+			<h:commandButton rendered="#{not row.editable}" action="#{courseUtilities.deleteCourse}"     value="Delete" onclick="return confirm('Confirm delete?');">
+				<f:setPropertyActionListener value="#{row}" target="#{courseUtilities.c}" />       			
+			</h:commandButton>
+		</h:column>
+   		<h:column>
+			<f:facet name="header">Department</f:facet>
+			<h:outputLabel styleClass="#{row.bgColorClass}" rendered="#{not row.editable and row.deptChanged}">#{row.d_name}</h:outputLabel>
+			<h:selectOneMenu id="d_id" value="#{row.d_id}" rendered="#{row.editable}">
+			   	<f:selectItems value="#{courseUtilities.dData}" />
+			</h:selectOneMenu>
+    	</h:column>	
+		<h:column>
+			<f:facet name="header">Callid</f:facet>
+			<h:outputLabel styleClass="#{row.bgColorClass}" value="#{row.c_callid}" rendered="#{not row.editable}" />
+ 			<h:inputText id="c_callid" value="#{row.c_callid}" rendered="#{row.editable}" required="true">
+				<f:validateLength maximum="8" minimum="3" />
+ 			</h:inputText>
+			<h:message for="c_callid" styleClass="error" />		
+    	</h:column>	
+ 		<h:column>
+			<f:facet name="header">Name</f:facet>
+			<h:outputLabel styleClass="#{row.bgColorClass}" value="#{row.c_name}" rendered="#{not row.editable}" />
+ 			<h:inputText id="c_name" value="#{row.c_name}" rendered="#{row.editable}" required="true">
+ 				<f:validateLength maximum="120" minimum="2" />
+ 			</h:inputText>
+			<h:message for="c_name" styleClass="error" />		
+     	</h:column>	
+    	<h:column>
+			<f:facet name="header">Credits</f:facet>
+			<h:outputLabel styleClass="#{row.bgColorClass}" value="#{row.c_credits}" rendered="#{not row.editable}" />
+			<h:inputText id="c_credits" value="#{row.c_credits}" rendered="#{row.editable}" required="true">
+				<f:validateLongRange minimum="0" maximum="10" />	
+			</h:inputText>
+			<h:message for="c_credits" styleClass="error" />		
+    	</h:column> 	
+	</h:dataTable>
+	<h:outputLabel value="#{courseUtilities.msg}" styleClass="blue" />			
+</h:form>
+</ui:define>
+</ui:composition>

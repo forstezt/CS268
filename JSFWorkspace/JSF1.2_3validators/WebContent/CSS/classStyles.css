@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+@import url("all.css");
+@import url("idStyles.css");
+.datatable table {
+	border:inset green 6px;
+	background-color:#CCCCCC;
+	color:black;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse : collapse;
+}
+.datatable td {
+	border:inset 1px gray;
+	padding:5px;
+}
+.datatable th {
+	text-align:left;
+	background-color:blue;
+	border:inset 1px gray;
+	color:white;
+}
+.error {
+	color: navy;
+	font-weight: bold;	
+}
+.errorRed {
+	color: red;
+	font-weight: bold;	
+}
+.alignleft {
+	text-align:left;	
+}
+.colLeft {
+	text-align:left;		
+}
+.colRight {
+	text-align:right;		
+}

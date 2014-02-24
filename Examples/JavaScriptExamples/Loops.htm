@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Loops</title>
+</head>
+<script type="text/javascript">
+function WhileLoop() {
+	var i = 0;
+	while (i < 5) {
+		document.write(i + "<br>");
+		i++;
+	};
+}
+
+function DoLoop() {
+	var i = 0;
+	do {
+		document.write(i + "<br>");
+		i++;
+	} while (i < 5);
+}
+
+function ForLoop() {
+	for(var i = 0; i < 5; i++) {
+		document.write(i + "<br>");
+	}
+}
+
+</script>
+<body>
+<form name="frmExample" id="frmExample" action="">
+<input type=text id=txtID name=txtID /><br />
+<input type=text name=txtPIN /><br />
+<input type=button value="While Loop" onClick="WhileLoop();" /><br />
+<input type=button value="Do Loop" onClick="DoLoop();" /><br />
+<input type=button value="For Loop" onClick="ForLoop();" /><br />
+</form>
+</body>
+
+</html>

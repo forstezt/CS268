@@ -1,0 +1,66 @@
+@CHARSET "ISO-8859-1";
+@import url("all.css");
+@import url("idStyles.css");
+.datatable {
+	border:inset green 6px;
+	background-color:#CCCCCC;
+	color:black;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse : collapse;
+}
+.datatable td {
+	border:inset 1px gray;
+	padding:5px;
+}
+.datatable th {
+	text-align:left;
+	background-color:blue;
+	border:inset 1px gray;
+	color:white;
+}
+.interiortable {
+	width           : 100%;
+	text-align      : left;
+	border          : none;
+    border-collapse : collapse;
+	background-color: #FFFACD;
+}
+.interiortable th {
+	text-align      : left;
+	background-color: #DBDCDA;
+	border          : inset 1px ;
+	border-color    : #333300;		
+}
+.interiortable td {
+	border         : inset 1px;
+	border-color   : #0000FF;
+	padding-left   : 5px;
+	padding-right  : 5px;
+	padding-top    : 5px;
+	padding-bottom : 5px;
+}
+.invalidlogin {
+	color:navy;
+	font-weight:bold;
+}
+.msg {
+	color:blue;
+	font-weight:bold;
+}
+.error {
+	color:red;
+	font-weight:bold;	
+}
+.row1 {
+	color:blue;
+}
+.row2 {
+	color:purple;
+}
+.colLeft {
+	text-align:left;		
+}
+.colRight {
+	text-align:right;		
+}

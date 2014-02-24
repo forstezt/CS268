@@ -1,0 +1,19 @@
+#sample {
+  background-color:#66CCFF;
+  border:solid #000 3px;
+  width:200px;
+}
+#sample th {
+  text-align:left;
+  background-color:#00CCCC;
+}
+#sample td {
+  padding:5px;
+  border:solid #000 1px;
+  text-align:right;
+}
+.leftcol {
+  background-colo:#F33;
+  font-weight:bold;   
+}
+

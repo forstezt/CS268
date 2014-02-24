@@ -1,0 +1,25 @@
+mvcExample4wLogin has a problem.  If you insert a new product, what happens when you refresh the browser after doing the submit?  
+The browser's address bar still shows this:
+
+insert?prod_desc=test&prod_cost=1&prod_price=2
+
+If you refresh it does the insert again when it was already done.  
+The refresh and back button on a browser can present challenges to a programmer.
+
+The reason for this is that in the FilterDispatcher a .forward is used to change pages.  
+This dosen't allow seeing the change in the browser (and avoids the round trip
+to the browser telling it to load a different page).
+
+a sendRedirect will allow the browser to see a change in its address bar.
+BUT it brings back the Servlet problem of creating an infinite loop since
+with the approach I've been using I catch "all" requests in the filter (\* for the url pattern)
+
+I could switch to the servlet approach of using .action or .do for the url pattern: \.action
+But I tried something different (struts uses a filter and can do a sendRedirect that preserves objects
+if use type="redirectAction").  Look at the FilterDispatcher to see how I handled this in this example.
+
+In this approach I continue to use .forward - unless I want the URL to change in the browser.
+Still have a problem with this modification, however.  Now the url parameters are lost when
+returning to AddProduct.jsp after an insert.  I could come with a solution for this - but
+I won't.  Struts and JSF both have solutions for all of this and I'm not interesting in
+creating my own version of either :-)

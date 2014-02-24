@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Candy Store</title>
+    <link href="CSS/styles.css" rel="stylesheet" type="text/css" />    
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="bodycenter">
+        <div id="navigation">
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" 
+                BackColor="#c0c0c0" DynamicHorizontalOffset="2" Font-Names="Verdana" 
+                Font-Size="1em" ForeColor="#7C6F57" StaticSubMenuIndent="10px" 
+                Orientation="Horizontal" CssClass="menu">
+                <StaticSelectedStyle BackColor="#5D7B9D" />
+                <StaticMenuItemStyle ItemSpacing="15px" HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                <DynamicMenuStyle BackColor="#F7F6F3" />
+                <DynamicSelectedStyle BackColor="#5D7B9D" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            </asp:Menu>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+                Font-Size="1em" PathSeparator=" : " CssClass="menu">
+                <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                <CurrentNodeStyle ForeColor="#333333" />
+                <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+                <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+            </asp:SiteMapPath>            
+            </div>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" ShowStartingNode="false" runat="server" />
+        <div id="mcontent" class="datatable">
+            <asp:ContentPlaceHolder id="Main" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

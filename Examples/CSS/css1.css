@@ -1,0 +1,13 @@
+#column1{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:200px;
+  background-color:#CC6666;
+}
+#column2{
+  position:absolute;
+  top:0px;
+  left:120px;
+  background-color:#CC66CC;
+}

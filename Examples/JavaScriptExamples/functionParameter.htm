@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>New Page 1</title>
+</head>
+<body>
+<script type="text/javascript">
+function validateAge(age) {
+	if(age == "") {
+		alert("Please enter your age");
+		return false;
+	} else if(isNaN(age) == true) {
+		alert("Please enter a number for your age");
+		return false;
+	}
+	return true;
+}
+function validateUserEntries() {
+	if(validateAge(document.frmEmployee.txtAge.value) == true) {
+		alert("Valid age was entered");
+	}
+}
+</script>
+<form name="frmEmployee" id="frmEmployee" action="">
+<input type="text" name="txtAge" id="txtAge" /><br />
+<input type="button" onclick="validateUserEntries();" value="Validate" />
+</form>
+
+</body>
+</html>

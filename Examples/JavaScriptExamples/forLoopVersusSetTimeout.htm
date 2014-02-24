@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>setTimeout versus Recursion</title>
+</head>
+<body>
+<script>
+/*
+http://www.howtocreate.co.uk/tutorials/javascript/timers 
+Also note, setting many timers with short delays on one page will cause the browser to become slow and somewhat unresponsive. Three or four timers is usually the reliable limit.
+
+And more on the topic here:
+http://ejohn.org/blog/how-javascript-timers-work/
+*/
+
+	var temp = "";
+	function startForLoop(param) {
+		for(var i = param; i <= 100; i++) {
+			setTimeout("concatenateToTemp(" + i + ")", 4);
+		}
+	}
+	function startSetTimeout(param) {
+		if(param > 100) return;
+		concatenateToTemp(param);
+		setTimeout("startSetTimeout(" + (param + 1) + ")", 4);		
+	}
+	function concatenateToTemp(param) {
+		temp += param + " ";
+		if(param >= 100) {
+			alert(temp);	
+		}
+	}
+</script>
+<input type="button" value="Start for loop" onClick="temp=''; startForLoop(1);" /><br />
+<input type="button" value="Start setTimeout loop" onClick="temp=''; startSetTimeout(1);" />
+</body>
+</html>

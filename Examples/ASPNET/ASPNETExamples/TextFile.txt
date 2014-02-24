@@ -1,0 +1,13 @@
+﻿            <asp:GridView ID="gvStudent" runat="server">
+                <Columns>
+                    <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                    <asp:TemplateField HeaderText="Last name" >
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <%# DataBinder.Eval(Container.DataItem, "StudentLastName") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>

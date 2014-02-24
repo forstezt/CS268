@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Goose Down Sleeping Bag</title>
+	<script language="javascript">
+		<!--
+			function WriteOrderSummary(){
+		    var price = 259.99;
+			var tax = .055;
+			
+			var subtotal = price * document.frmOrderItem.txtQuantity.value;
+			document.frmOrderItem.txtSubTotal.value = "$ " + subtotal.toFixed(2);
+			
+			var taxTotal = tax * subtotal;
+			document.frmOrderItem.txtTax.value = "$   " + taxTotal.toFixed(2);
+			
+			var grandTotal = subtotal + taxTotal
+			document.frmOrderItem.txtOrderTotal.value = "$ " +grandTotal.toFixed(2);
+			}
+		//-->
+	</script>
+</head>
+<body>
+<!--table displaying CWT logo and page title -->
+<table width="80%" align="center">
+  <tr>
+    <td><img src="tents.jpg" width="200" height="174" align="right" style="WIDTH: 200px; HEIGHT: 174px"></td>
+    <td><big><b>&nbsp;&nbsp;<span class="style1">3-Season Tent</span></big></td>
+  </tr>
+</table>
+<!--table and form displaying inventory data -->
+<form name="frmOrderItem" action="omit for now">
+<p><table width="80%" border="5" cellspacing="3" cellpadding="5" align="center">
+  <tr>
+    <th width="20%"><div align="left">Size</div></th>
+    <th width="20%"><div align="left">Color</div></th>
+    <th width="20%"><div align="left">Price</div></th>
+    <th width="20%"><div align="left">In Stock?</div></th>
+  </tr>
+  <tr><td align=middle>Rectangular</td>
+    <td align=middle>Blue</td>
+    <td align=middle>259.99</td>
+    <td align=middle>Yes</td></tr>
+</table>
+</p><p>
+<!--table displaying form controls -->
+<table width="80%" cellspacing="3" cellpadding="5" align="center">
+  <tr>
+    <td width="70%"><big>Desired Quantity</big> 
+    <input type="text" name="txtQuantity" size="10"></td>
+    <td align="right" width="15%"><input type="button" value="Calculate Order Total" 
+		onClick="WriteOrderSummary()"></td>
+  </tr>
+</table></p>
+<!-- table summarizing order -->
+<p>
+<table width="80%" align="center" border ID="Table1">
+	<tr><td align="right">Subtotal:</td><td><input type="text" name="txtSubTotal"></td></tr>
+	<tr><td align="right">Tax:</td><td><input type="text" name="txtTax"></td></tr>
+	<tr><td align="right">Order Total:</td><td><input type="text" name="txtOrderTotal"></td></tr>
+</table>
+</p>
+</form>
+</body></html>

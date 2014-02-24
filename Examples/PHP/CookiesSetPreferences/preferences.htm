@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Candy Customers</title>
+	<script type="text/javascript" src="preferences.js"></script>
+</head>
+<body bgcolor="#9999CC" onLoad="getPreferences();">
+<form name="frmCustomer" action="nextPage.php">
+<table id="mainTable" align="center" border="5" cellspacing="1" cellpadding="5">
+<tr><td rowspan="5" valign="top">
+		<div style="border:ridge"><img src="candy.jpg" alt="Candy Customers" width="100px" height="100px"></div>
+    </td>
+    <td colspan="2" align="center"><b><font size="6">Set Preferences</font></b></td>
+</tr>
+<tr>
+	<td align="right">Table Border Width:&nbsp;</td>
+    <td>
+    	<select name="selBorderWidth" size="1" onChange="setBorderWidth();">
+        	<option value="Select">Select Width</option>
+        	<option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="9">9</option>
+        </select>    
+    </td>
+</tr>
+<tr>
+	<td align="right">Background Color:&nbsp;</td>
+    <td>
+    	<select name="selBgColor" size="1" onChange="setBgColor();">
+        	<option value="Select">Select Color</option>
+        	<option value="9999CC">Violet</option>
+            <option value="0066FF">Light Blue</option>
+            <option value="009900">Dark Green</option>
+            <option value="99FFCC">Light Green</option>
+            <option value="FFFFCC">Wheat</option>
+        </select>
+    </td>
+</tr>
+<tr>
+	<td align="right">Enter Custom Color:&nbsp;</td>
+    <td><input type="text" name="txtBgColor" size="12" maxlength="6">
+        <input type="button" onclick="setCustomBgColor();" value="Set"></td>
+</tr>
+<tr><td align="right">&nbsp;</td>
+    <td valign="top"><input type="submit" value="    Next Page    "></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

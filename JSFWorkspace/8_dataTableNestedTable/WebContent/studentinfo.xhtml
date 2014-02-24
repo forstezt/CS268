@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+<ui:composition template="/Templates/maintemplate.xhtml">
+<ui:define name="content">
+	<h:dataTable value="#{studentUtilities.sData}"
+	             var="row"
+	             styleClass="datatable">
+   		<h:column>
+			<f:facet name="header">Students</f:facet>
+			<table class="interiortable">
+				<tr><td>Name:</td><td>#{row.s_last}, #{row.s_first} #{row.s_mi}</td></tr>
+				<tr><td>Phone:</td><td>#{row.s_phone}</td></tr>
+				<tr><td>Address:</td><td>#{row.s_address}</td></tr>
+				<tr><td></td><td>#{row.s_city}, #{row.st_state}  #{row.s_zip}</td></tr>
+			</table>
+    	</h:column>	
+	</h:dataTable>
+	<center>#{studentUtilities.msg}</center>
+</ui:define>
+</ui:composition>
+</body>
+</html>

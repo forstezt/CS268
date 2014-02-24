@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Select account to delete</title>
+</head>
+
+<body>
+<script language=javascript>
+	function confirmDelete() {
+		var userChoice = confirm("Do you really want to delete this account?");
+		if(userChoice == true) {
+			alert("User confirmed delete");
+			return true;
+		}
+		alert("User did not confirm the delete");
+		return false;
+	}
+</script>
+<form name=frmDelete action="delete.jsp">
+Select account to delete<br>
+<select>
+<option value=0>Smith</option>
+<option value=1>Jones</option>
+<option value=2>Helloid</option>
+</select>
+<br>
+<input type=submit value="Delete account" onclick="return confirmDelete();">
+</form>
+</body>
+
+</html>

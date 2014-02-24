@@ -1,0 +1,15 @@
+Line 94: <td align="left"><input type="button" onClick="validate"  value="Update"></td>
+validate is missing the parentheses after it (and semicolon)
+<td align="left"><input type="button" onClick="validate();"  value="Update"></td>
+
+Line 17: } else 
+Missing an opening curly brace
+} else {
+
+Line 21: if (BookIndex = -1) {
+should be ==, not a single =
+if (BookIndex == -1) {
+
+Line 41: "Book: " + books + "\n" + 
+books should be spelled book
+"Book: " + book + "\n" + 

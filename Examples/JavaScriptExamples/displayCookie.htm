@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Display Order Cookie</title>
+<script type="text/javascript">
+	function displayCookies(){
+		alert("Not implemented yet");
+	}
+	
+	// this function is provided by your instructor
+	// there is no built in javascript function
+	// to individually retrieve and display a cookie
+	// so this will do it for you
+	function getCookie(strName) {
+	  var numEndOfCookie;
+	  var Result = "";
+	  var allCookies = document.cookie;
+	  var SearchName = strName + "=";
+	  var StartOfCookie = allCookies.indexOf(SearchName)
+	  if (StartOfCookie != -1) {
+		StartOfCookie += SearchName.length;
+		EndOfCookie = allCookies.indexOf(";", StartOfCookie);
+		if (EndOfCookie == -1) {
+			EndOfCookie = allCookies.length;
+		}
+		Result = allCookies.substring(StartOfCookie, EndOfCookie);
+	  }
+	  return Result;
+	}	
+</script>
+</head>
+<body>
+	<input type="button" value="Display the order form's cookies" onclick="??" />
+</body>
+</html>

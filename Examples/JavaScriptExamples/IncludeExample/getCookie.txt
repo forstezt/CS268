@@ -1,0 +1,17 @@
+function getCookie(strName) {
+  var numEndOfCookie;
+  var Result = "";
+  var allCookies = document.cookie;
+  var SearchName = strName + "=";
+  var StartOfCookie = allCookies.indexOf(SearchName)
+  if (StartOfCookie != -1) {
+	StartOfCookie += SearchName.length;
+	EndOfCookie = allCookies.indexOf(";", StartOfCookie);
+	if (EndOfCookie == -1) {
+		EndOfCookie = allCookies.length;
+	}
+	Result = allCookies.substring(StartOfCookie, EndOfCookie);
+  }
+  return Result;
+}
+

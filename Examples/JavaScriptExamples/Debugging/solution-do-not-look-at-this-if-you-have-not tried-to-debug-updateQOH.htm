@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<title>Learning Technologies</title>
+		<script type="text/javascript">
+		function validate() {
+		    // lstWarehouse is spelled with a lower case W in other page
+			var WarehouseIndex = frmUpdate.lstWarehouse.selectedIndex;
+			var BookIndex = frmUpdate.lstBook.selectedIndex;
+			var QOH = parseInt(frmUpdate.txtQOH.value);
+		
+			if (WarehouseIndex == -1) {
+				alert("Please select a warehouse.");
+				frmUpdate.lstWarehouse.focus();
+				return false;
+			} 		
+			var warehouse = frmUpdate.lstWarehouse.options[WarehouseIndex].text;
+			
+			// in other page BookIndex has a lower case l in place of the I in BookIndex
+			if (BookIndex == -1) {
+				alert("Please select a book.");
+				frmUpdate.lstBook.focus();
+				return false;
+			} // missing this closing curly brace in other page
+			
+			var book = frmUpdate.lstBook.options[BookIndex].text;
+			
+			if (isNaN(QOH)) {
+				alert("Please enter a number for quantity.");
+				frmUpdate.txtQOH.select();
+				return false;
+			} 
+			
+			if (QOH < 1) {
+				alert("Please enter a quantity that is 1 or more.");
+				frmUpdate.txtQOH.select();  
+				return false;
+			}
+			
+			var response = confirm("Confirm:" +"\n" +
+				                   "Warehouse: " + warehouse + "\n" +
+				                   "Book: " + book + "\n" + 
+				                   "QOH: " + QOH) 
+			return response;
+		}
+		</script>
+	</head>
+	<body>
+		<form name="frmUpdate" action="">
+			<table width="40%" align="center">
+				<tr>
+					<td><img src="dog.jpg" height="187" width="167" alt="dog picture" /></td>
+					<td><h1>
+							Update Warehouse QOH</h1>
+					</td>
+				</tr>
+			</table>
+			<hr size="5" />
+			<table align="center">
+				<tr>
+					<td align="right">Warehouse:</td>
+					<td>
+						<select name="lstWarehouse" size="3">
+							<option>St. Paul</option>
+							<option>New York</option>
+							<option>Milwaukee</option>
+							<option>Houston</option>
+							<option>Chicago</option>
+						</select>
+					</td>
+					<td style="width: 3px"></td>
+				</tr>
+				<tr>
+					<td align="right">Book:</td>
+					<td>
+						<select name="lstBook" size="3">
+							<option>Oracle for Dummies</option>
+							<option>Advanced Oracle for Dummies</option>
+							<option>Web Programming for the Unenlightened</option>
+							<option>Java Programming for Cave Dwellers</option>
+							<option>SQL Queries for Managers</option>
+						</select>
+					</td>
+					<td style="width: 3px"></td>
+				</tr>
+				<tr>
+					<td align="right">QOH:</td>
+					<td><input type="text" size="20" name="txtQOH" /></td>
+					<td style="width: 3px"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="left"><input type="button" onclick="validate();"  value="Update" /></td>
+					<td style="width: 3px"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+
+	<script src="/JSLibrary/buttons.js"></script>
+    <div id="navigation">
+    	<div id="menu">
+				<a href="login">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;
+				<a href="selectcustomer">Edit or Delete Customers</a>&nbsp;&nbsp;&nbsp;
+				<a href="inputcustomernew">Add Customer</a>&nbsp;&nbsp;&nbsp;			
+		</div>    
+	</div>

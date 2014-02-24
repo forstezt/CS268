@@ -1,0 +1,48 @@
+Explanation
+Everything is packed between <taglib> and </taglib> tags. First five sub-tags under the <taglib> tag are general tags for providing info about the tag library as a whole. They are not specific to any tag.
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd"> 
+
+<taglib>
+tlibversion tag tells about the current version of tag library. Since this is the first time we built this demo tag library, I put 1.0 in it.
+
+	<tlibversion>1.0</tlibversion>
+jspversion tells the application server what version of JSP this tag library uses. There are currently three versions of JSP, 1.0, 1.1 and future version 1.2. Our JSP tag FirstTag uses JSP version 1.1.
+
+	<jspversion>1.1</jspversion>
+A simple short name for the tag library.
+
+	<shortname>DemoTags</shortname>
+uri tag doesn't do much job in the current version of JSP.
+
+	<uri>http://www.stardeveloper.com</uri>
+A short text about the use of this tag library.
+
+	<info>Demo Tags Library</info>
+Now comes individual tag description between the <tag> and </tag> tag.
+
+	<tag> 
+		<name>firsttag</name> 
+		<tagclass>com.stardeveloper.tag.test.FirstTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Your first JSP Tag</info> 
+
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+name is the short name you will be using in the JSP page after the prefix e.g. firsttag in the <star:firsttag /> tag.
+
+tagclass should contain the complete path to the JSP tag class.
+
+bodycontent should contain one of the three values; tagdependent, JSP and empty. Since there is body content in our tag so we select empty.
+
+Optional info tag.
+
+Then attribute tag describes each attribute separately. name is the name of the attribute, in our case it is "name". required can be true or false. We chose false so this tag can be used without entering value for the "name" attribute.
+
+We have finished building the FirstTag.class and DemoTags.tld files. Let's now build the JSP page which calls this tag.
+

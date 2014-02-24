@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+   <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+   <constant name="struts.devMode" value="false" />
+    
+   <package name="default" namespace="/" extends="struts-default">
+   
+		<action name="display" class="strutsPkg.ProductUtils" method="retrieveProductInformation">
+			<result name="success" type="redirect">DisplayProduct.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action> 
+		
+		<action name="input">
+			<result name="success">InputInsert.jsp</result>
+		</action>
+
+		<action name="insert" class="strutsPkg.ProductUtils" method="insert">
+			<!-- try this with redirect and with chain and observe the URL after inserting a product -->
+			
+			<!-- <result type="chain">display</result> -->
+			
+			<!-- <result type="redirect">display</result> --> 
+			
+			<!-- delete the following redirectAction if using one of the above approaches (chain or redirect) --> 
+			<result type="redirectAction">
+				<param name="actionName">display</param>
+				<!-- for the msg param to be visible in the display action the ProductUtils  
+				     class must have a class variable named msg with a setter and getter -->				
+				<param name="msg">${msg}</param>
+			</result>
+						
+			<result name="error">Error.jsp</result>
+		</action>				
+		
+   </package>
+</struts>    	

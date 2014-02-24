@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true" >
+    <siteMapNode title="Home Page"  description="ASP.NET Examples" url="~/Default.aspx" >
+        <siteMapNode title="Details View" description="DetailsView Example" url="~/DetailsView.aspx"/>
+        <siteMapNode title="Grid View" description="GridView Example" url="~/GridView.aspx"/>
+        <siteMapNode title="Master Detail" description="Master Detail Example" url="~/MasterDetail.aspx"/>
+        <siteMapNode title="Student Images" description="Student Image Example" url="~/StudentImages.aspx"/>
+        <siteMapNode title="Advanced Master Detail" description="Advanced Master Detail" >
+            <siteMapNode title="With Images" description="Master Detail Example" url="~/AdvancedMDetail/MasterDetailwPhoto.aspx"/>
+            <siteMapNode title="No Wizards Simple" description="No Wizards Simple" url="~/AdvancedMDetail/NoWizardGridView.aspx"/>
+            <siteMapNode title="No Wizards Complex" description="No Wizards Complex" url="~/AdvancedMDetail/MasterDetailAdvanced.aspx"/>
+            <siteMapNode title="Custom Pick List" description="Custom Pick List" url="~/AdvancedMDetail/MasterDetailAdvancedPlus.aspx"/>
+        </siteMapNode>
+        <siteMapNode title="Redirect vs Transfer" description="Redirect vs Transfer" url="~/RedirectVsTransfer.aspx"/>
+    </siteMapNode>
+</siteMap>
